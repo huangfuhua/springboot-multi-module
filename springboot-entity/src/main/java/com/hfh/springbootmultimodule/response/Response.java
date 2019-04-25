@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Response {
-    private Integer result;
+    private Integer result = RESULT_CODE.SUCCESS.getCode();
     private String message;
     private Object data;
 
