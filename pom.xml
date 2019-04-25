@@ -29,38 +29,39 @@
 		<module>springboot-dao</module>
 	</modules>
 
+	<properties>
+		<spring.boot.version>2.1.3.RELEASE</spring.boot.version>
+	</properties>
+
 	<!-- 版本说明：这里统一管理依赖的版本号 -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>com.hfh</groupId>
 				<artifactId>springboot-web</artifactId>
-				<version>1.0.0.SNAPSHOT</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.hfh</groupId>
 				<artifactId>springboot-service</artifactId>
-				<version>1.0.0.SNAPSHOT</version>
-			</dependency>
-			<dependency>
-				<groupId>com.hfh</groupId>
-				<artifactId>springboot-repo</artifactId>
-				<version>1.0.0.SNAPSHOT</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.hfh</groupId>
 				<artifactId>springboot-entity</artifactId>
-				<version>1.0.0.SNAPSHOT</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-test</artifactId>
 				<scope>test</scope>
+				<version>${spring.boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-actuator</artifactId>
+				<version>${spring.boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.projectlombok</groupId>
