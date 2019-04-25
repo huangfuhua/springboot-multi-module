@@ -1,21 +1,21 @@
 package com.hfh.springbootmultimodule.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
 
 /**
  * Created by huangfuhua on 2019/4/25.
  */
 @Entity
+@Table(name = "person")
 @Data
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer"})
 public class Person {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name", nullable = true, length = 128)
