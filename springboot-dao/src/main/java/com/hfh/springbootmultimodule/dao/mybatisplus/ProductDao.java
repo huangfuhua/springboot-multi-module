@@ -6,5 +6,6 @@ import com.hfh.springbootmultimodule.entity.Product;
 /**
  * Created by huangfuhua on 2019/4/25.
  */
+
 public interface ProductDao extends BaseMapper<Product>{
 }

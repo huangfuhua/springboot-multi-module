@@ -29,7 +29,7 @@ public class ProductController {
         return Response.builder().data(one).build();
     }
 
-    @GetMapping(path = "/persons")
+    @GetMapping(path = "/products")
     public Response getPerson(@RequestParam Integer pageNo , @RequestParam Integer pageSize) {
         Page<Product> productPage = productService.selectPage(new Page<Product>(pageNo - 1, pageSize), new EntityWrapper<Product>());
         return Response.builder().data(productPage).build();
@@ -37,7 +37,7 @@ public class ProductController {
 
     @PutMapping(path = "/update")
     public Response updatePerson(Product product) {
-        boolean update = productService.update(product, new EntityWrapper<Product>().eq("id", product.getId()));
+        boolean update = productService.updateById(product);
         return Response.builder().data(update).build();
     }
 

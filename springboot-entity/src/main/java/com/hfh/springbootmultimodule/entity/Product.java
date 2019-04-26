@@ -2,6 +2,7 @@ package com.hfh.springbootmultimodule.entity;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +19,7 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
-    @TableId
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     @NotBlank(message = "标题不能为空")
