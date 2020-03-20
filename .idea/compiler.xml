@@ -6,18 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot-dao" />
         <module name="springboot-entity" />
-        <module name="springboot-service" />
         <module name="springboot-web" />
+        <module name="springboot-dao" />
+        <module name="springboot-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="springboot-dao" target="1.8" />
-      <module name="springboot-entity" target="1.8" />
-      <module name="springboot-multi-module" target="1.8" />
-      <module name="springboot-service" target="1.8" />
-      <module name="springboot-web" target="1.8" />
+      <module name="springboot-dao" target="1.6" />
+      <module name="springboot-entity" target="1.6" />
+      <module name="springboot-multi-module" target="1.6" />
+      <module name="springboot-service" target="1.6" />
+      <module name="springboot-web" target="1.6" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-dao" options="-parameters" />
+      <module name="springboot-entity" options="-parameters" />
+      <module name="springboot-service" options="-parameters" />
+      <module name="springboot-web" options="-parameters" />
+    </option>
   </component>
 </project>
