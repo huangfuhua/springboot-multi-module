@@ -1,7 +1,8 @@
 package com.hfh.springbootmultimodule.controller;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.plugins.Page;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hfh.springbootmultimodule.entity.Product;
 import com.hfh.springbootmultimodule.response.Response;
 import com.hfh.springbootmultimodule.service.mybatisplus.ProductService;
@@ -19,19 +20,20 @@ public class ProductController {
 
     @PostMapping(path = "/add")
     public Response addPerson(Product product) {
-        boolean insert = productService.insert(product);
+        boolean insert = productService.save(product);
         return Response.builder().data(insert).build();
     }
 
     @GetMapping(path = "/{id}")
     public Response getPerson(@PathVariable("id") Long id) {
-        Product one = productService.selectOne(new EntityWrapper<Product>().eq("id" , id));
+        Product one = productService.getOne(new QueryWrapper<Product>() {
+        }.eq("id" , id));
         return Response.builder().data(one).build();
     }
 
     @GetMapping(path = "/products")
     public Response getPerson(@RequestParam Integer pageNo , @RequestParam Integer pageSize) {
-        Page<Product> productPage = productService.selectPage(new Page<Product>(pageNo - 1, pageSize), new EntityWrapper<Product>());
+        IPage<Product> productPage = productService.page(new Page<>(pageNo - 1, pageSize), new QueryWrapper<>());
         return Response.builder().data(productPage).build();
     }
 
@@ -43,7 +45,7 @@ public class ProductController {
 
     @DeleteMapping(path = "/{id}")
     public Response deletePerson(@PathVariable("id") Long id) {
-        boolean delete = productService.deleteById(id);
+        boolean delete = productService.removeById(id);
         return Response.builder().data(delete).build();
     }
 }

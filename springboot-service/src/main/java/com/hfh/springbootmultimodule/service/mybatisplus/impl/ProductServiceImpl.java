@@ -1,6 +1,6 @@
 package com.hfh.springbootmultimodule.service.mybatisplus.impl;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hfh.springbootmultimodule.dao.mybatisplus.ProductDao;
 import com.hfh.springbootmultimodule.entity.Product;
 import com.hfh.springbootmultimodule.service.mybatisplus.ProductService;

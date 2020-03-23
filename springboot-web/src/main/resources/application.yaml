@@ -10,6 +10,10 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://47.99.63.216:3306/spring_multi_module?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+#    username: root
+#    password: wo131421
+
     url: jdbc:mysql://127.0.0.1:3306/spring_multi_module?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     username: root
     password: 131421
